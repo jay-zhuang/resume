@@ -1,0 +1,187 @@
+% The template is copied from https://www.overleaf.com/latex/templates/sfiucr-template-cv-slash-resume/xqvshnpvtsbv
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{multicol}
+\input{glyphtounicode}
+
+\usepackage{baskervillef}
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\setlength{\footskip}{10pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\usepackage{titlesec}
+\usepackage{lipsum}
+
+\titlespacing*{\section}
+{-0pt}{-1ex plus 0ex minus .2ex}{2.3ex plus .2ex}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+
+%\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{3pt}
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & {\large#2} \\
+      {\large#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-10pt}
+}
+
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+\begin{document}
+
+\urlstyle{same}
+
+\begin{center}
+    {\LARGE Jay Zhuang} \\ \vspace{0pt}
+    \begin{multicols}{2}
+    \begin{flushleft}
+    \large{+1 508-372-0529} \\
+    \large{San Francisco Bay Area} \\
+    \end{flushleft}
+    \begin{flushright}
+% this could be LinkedIn, GitHub, or a personal website or social media account (if used for professional purposes)
+    \href{https://github.com/jay-zhuang/}{\large{github.com/jay-zhuang/}} \\
+% please ensure your email address is one you check
+    \href{mailto:jay.zhuang@yahoo.com}{\large{jay.zhuang@yahoo.com}}
+    \end{flushright}
+    \end{multicols}
+\end{center}
+
+
+\section{Summary} 
+\begin{itemize}[leftmargin=0.2in]
+    \itemsep-0.4em 
+    \item Tech lead for building multiple distributed systems and scaling them up;
+    \item 14+ years experience with large-scale database systems, ETL development, and management;
+    \item Apache Cassandra committer, RocksDB contributor.
+\end{itemize}
+
+%-----------OTHER EXPERIENCE-----------
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Meta}{Jan. 2019 - Present}
+      {Staff Software Engineer}{}
+      \resumeItemListStart
+        \small\resumeItem{Led RocksDB \href{https://github.com/facebook/rocksdb/wiki/Remote-Compaction-\%28Experimental\%29}{Remote Compaction project} development which \href{https://drive.google.com/file/d/1PBFwP6VFg-EQemPJaeLwIsZMq5K0kwg7/view?usp=share_link}{improved the primary host throughput by up to 20\%};}
+        \resumeItem{Designed and implemented the RocksDB \href{https://github.com/facebook/rocksdb/wiki/Tiered-Storage-\%28Experimental\%29}{Tiered Storage feature} which brings tiering inside of RocksDB;}
+        \resumeItem{Implemented multiple RocksDB compaction improvements like \href{https://rocksdb.org/blog/2022/10/31/align-compaction-output-file.html}{aligning compaction files to improve compaction by more than 10\%}; Designed a new compaction strategy RoundRobin which has more than 10\% compaction improvement over the default one, mentoring an intern to finish building \href{https://github.com/facebook/rocksdb/blob/b0d9776b704af01c2b5385e9d53754e0c8176373/include/rocksdb/advanced_options.h\#L58-L62}{this feature};}
+        \resumeItem{Managed the largest Cassandra cluster in the world, fixed \href{https://github.com/ngcc/ngcc2019/blob/master/CassandraTokenManagement.pdf}{Cassandra scaling blocking issues like consistency hashing token management and Gossip protocol};}
+        \resumeItem{Designed and built the first ML Feature Store on \href{https://github.com/Instagram/cassandra}{Rocksandra} which was used for all IG ML Feature Store.}
+        \resumeItemListEnd
+
+    \resumeSubheading
+      {Uber}{Aug. 2016 - Jan. 2019}
+      {Senior Software Engineer II}{}
+      \resumeItemListStart
+        \small\resumeItem{Tech lead for Uber Cassandra team, built Cassandra-as-a-service and running it at Uber scale;}
+        \resumeItem{Designed and implemented \href{https://github.com/ngcc/ngcc2017/blob/master/CassandraDataIngestion.pdf}{Cassandra CDC} feature;}
+        \resumeItem{Built the framework to run Cassandra on Apache Mesos, setup the release pipeline, and fixed the Cassandra bugs in production, honored to be selected as Cassandra committer for fixing multiple \href{https://issues.apache.org/jira/browse/CASSANDRA-15291?jql=assignee\%20\%3D\%20jay.zhuang}{critical issues}.}
+        \resumeItemListEnd
+
+    \resumeSubheading
+      {Amazon AWS}{Feb. 2013 - Aug. 2016}
+      {Senior Software Engineer}{}
+      \resumeItemListStart
+        \small
+        \resumeItem{Rebuilt the \href{https://aws.amazon.com/cloudsearch/}{CloudSearch} V2 with Open Source Solr engine and released it to production;}
+        \resumeItem{Co-creator of \href{https://aws.amazon.com/opensearch-service/}{Amazon OpenSearch Service}, designed, built, and maintained the new service which manages dozens thousand search clusters;}
+        \resumeItem{Created the infra and tooling to scale up the service which manages a large number of search nodes (.}
+        \resumeItemListEnd
+        
+    \resumeSubheading
+      {Microsoft}{Oct. 2011 - Feb. 2013}
+      {Software Development Engineer}{}
+      \resumeItemListStart
+        \small\resumeItem{Worked in Office SharePoint Enterprise Content Management team. Owner of the SharePoint 2013 Designer feature that converts the user's input to SharePoint design;}
+        \resumeItem{Built and maintained public API interfaces and their backward/forward compatibility.}
+        \resumeItemListEnd
+        
+    \resumeSubheading
+      {EMC}{Jan. 2008 - Oct. 2011}
+      {Senior Software Development Engineer}{}
+      \resumeItemListStart
+        \small\resumeItem{Responsible for storage control plane APIs (ESES: Extended SCSI Enclosure Services) design and development;}
+        \resumeItem{Refactored the diagnostic module in a multi-thread environment which improved the performance and system stability.}
+        \resumeItemListEnd
+        
+    \resumeSubheading
+      {Intel}{Jun. 2007 - Nov. 2007}
+      {Software Engineer Intern}{}
+      \resumeItemListStart
+        \small\resumeItem{Worked on open-source Linux project Mobin (MeeGo). Implemented the communication functions in customized Media Player for Helix D-Bus server.}
+        \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Education}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+        {East China Normal University}{Sep. 2005 - Jul. 2008}
+        {Master, Computer Science}{}
+      \resumeSubheading
+        {Shanghai Institute of Technology}{Sep. 2001 - Jul. 2005}
+        {Bachelor, Computer Science}{}
+
+\resumeSubHeadingListEnd
+
+\end{document}
